@@ -1,0 +1,43 @@
+/*Determinar si un numero es multiplo de 10*/
+
+package Condicionales;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+
+	public static void main(String[] args) {
+	int band = 0;
+	int numero, random, intentos =0;
+	
+	random = (int) (Math.random() * 100) + 1;
+	System.out.println(random);
+
+
+	 do {	
+		 
+		 numero = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el numero "));
+
+		 	if (numero > random) {
+		 		JOptionPane.showMessageDialog(null, "Ingresa un numero menor");
+				intentos ++;
+		 	}
+		 	
+		 	else if (numero < random) {
+		 		JOptionPane.showMessageDialog(null, "Ingresa un numero mayor");
+				intentos ++;
+		 	}
+		 	
+		 	else if (random == numero) {
+				band = 1;
+				JOptionPane.showMessageDialog(null, "Felicidades ");
+			}
+				
+				
+		} while (band != 1);
+		
+		
+		JOptionPane.showMessageDialog(null, "El numero es " + numero);
+		JOptionPane.showMessageDialog(null, "El numero fue encontrado en " + intentos + " intentos" );
+	}
+}
